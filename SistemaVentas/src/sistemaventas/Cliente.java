@@ -18,6 +18,14 @@ public class Cliente {
         this.password = password;
         this.idrol = idrol;
     }
+    
+    // Sin el IdCliente para poder crear cliente y que la DB cree automatico la id
+    public Cliente(String nombre, String usuario, String password, int idrol) {
+        this.nombre = nombre;
+        this.usuario = usuario;
+        this.password = password;
+        this.idrol = idrol;
+    }
 
     public int getIdcliente() {
         return idcliente;

@@ -41,6 +41,7 @@ public class Administrador extends javax.swing.JFrame {
         adminName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         adminSalir = new javax.swing.JButton();
+        adminClientes = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TableProduct = new javax.swing.JTable();
@@ -114,6 +115,15 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
 
+        adminClientes.setBackground(new java.awt.Color(255, 204, 204));
+        adminClientes.setText("Clientes");
+        adminClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        adminClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminClientesMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -128,6 +138,8 @@ public class Administrador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adminName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(adminClientes)
+                .addGap(49, 49, 49)
                 .addComponent(adminSalir)
                 .addContainerGap())
         );
@@ -140,7 +152,8 @@ public class Administrador extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(adminName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(adminSalir))
+                    .addComponent(adminSalir)
+                    .addComponent(adminClientes))
                 .addContainerGap())
         );
 
@@ -488,7 +501,7 @@ public class Administrador extends javax.swing.JFrame {
         precioTest = txt_precio.getText();
         
         if("".equals(idtest) || "".equals(descripcion) || "".equals(cantidadTest) || "".equals(precioTest)){
-            JOptionPane.showMessageDialog(null, "Debe Seleccionar un Producto para borrar");
+            JOptionPane.showMessageDialog(null, "Debe Seleccionar un Producto para Editar");
         }else{
             idProduct = Integer.parseInt(idtest);
             cantidad = Integer.parseInt(cantidadTest);
@@ -511,6 +524,21 @@ public class Administrador extends javax.swing.JFrame {
             listar();
         }
     }//GEN-LAST:event_btn_modificarMouseClicked
+
+    private void adminClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminClientesMouseClicked
+        AdminClientes adminCliente = new AdminClientes();
+        String idClienteEnviar = adminId.getText();
+        String adminNameEnviar = adminName.getText();
+        // Llamar a la ventana de AdminClientes y reemplazarlo por "TIENDA"
+        adminCliente.setVisible(true);
+        adminCliente.setLocationRelativeTo(null);
+        //Estos dos lineas de abajo ponen un valor en otra ventana
+        adminCliente.adminIdCliente.setText(idClienteEnviar);
+        adminCliente.adminNameCliente.setText(adminNameEnviar);
+        
+        // Cierra esta ventana y la otra se queda abierta
+        this.dispose();
+    }//GEN-LAST:event_adminClientesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -589,6 +617,7 @@ public class Administrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTable TableProduct;
+    public javax.swing.JButton adminClientes;
     public javax.swing.JTextField adminId;
     public javax.swing.JTextField adminName;
     public javax.swing.JButton adminSalir;
