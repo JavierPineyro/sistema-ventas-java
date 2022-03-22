@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-03-2022 a las 02:25:24
+-- Tiempo de generación: 18-11-2021 a las 14:20:36
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.24
 
@@ -41,8 +41,7 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`idcliente`, `nombre`, `usuario`, `password`, `idrol`) VALUES
 (1, 'Javier', 'javi', 'pass123', 1),
-(2, 'Lorena', 'lore', 'lore1', 2),
-(3, 'NombreTesteo', 'usuarioTest', '123123123', 2);
+(2, 'Lorena', 'lore', 'lore12', 2);
 
 -- --------------------------------------------------------
 
@@ -62,9 +61,7 @@ CREATE TABLE `compra` (
 
 INSERT INTO `compra` (`idcompra`, `idproducto`, `idcliente`) VALUES
 (4, 2, 2),
-(5, 2, 2),
-(6, 16, 2),
-(7, 2, 2);
+(5, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -87,9 +84,7 @@ CREATE TABLE `detalle_compra` (
 
 INSERT INTO `detalle_compra` (`iddetalle`, `nombre`, `producto`, `cantidad`, `precio`, `total`) VALUES
 (2, 'Lorena', 'Silla Abeto1.75x40cm', 2, 4200, 8400),
-(3, 'Lorena', 'Silla Abeto1.75x40cm', 4, 4200, 16800),
-(4, 'Lorena', 'Armario Roble Rojo 2mts', 1, 38760, 38760),
-(5, 'Lorena', 'Silla Abeto1.75x40cm', 1, 4200, 4200);
+(3, 'Lorena', 'Silla Abeto1.75x40cm', 4, 4200, 16800);
 
 -- --------------------------------------------------------
 
@@ -110,7 +105,7 @@ CREATE TABLE `producto` (
 
 INSERT INTO `producto` (`idproducto`, `descripcion`, `stock`, `precio`) VALUES
 (1, 'Mesa de Abeto 4x5 mts', 4, 32000),
-(2, 'Silla Abeto1.75x40cm', 11, 4200),
+(2, 'Silla Abeto1.75x40cm', 12, 4200),
 (3, 'Silla Aluminio Fino XS', 4, 3650),
 (4, 'Silla Alumninio Fijo XP', 6, 3650),
 (5, 'Mesa desmontable 4x3.5', 2, 10040),
@@ -180,19 +175,19 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idcliente` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idcliente` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `idcompra` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idcompra` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_compra`
 --
 ALTER TABLE `detalle_compra`
-  MODIFY `iddetalle` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `iddetalle` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
